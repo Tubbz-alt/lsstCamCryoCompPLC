@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<DataSet>
+  <DATE>
+    <FILE_CREATED>9/24/2018 4:04:00 PM</FILE_CREATED>
+  </DATE>
+  <FILE>
+    <NAME>C:\Users\joaoprod\Documents\GitHub\lsstCamColdCompPLC\configs\tv_din1620_cold_config.xml</NAME>
+  </FILE>
+  <MODEL>
+    <TYPE>TX_DIN1620</TYPE>
+  </MODEL>
+  <CONFIG>
+    <RANGE>4</RANGE>
+    <ERROR>0</ERROR>
+    <UNITS>0</UNITS>
+    <MODEL>0</MODEL>
+    <OUTPUT_RANGE>3</OUTPUT_RANGE>
+    <TRIP_A_ACTION>0</TRIP_A_ACTION>
+    <TRIP_B_ACTION>0</TRIP_B_ACTION>
+    <SPARE>1</SPARE>
+    <LOW_RANGE>-50</LOW_RANGE>
+    <HIGH_RANGE>150.0</HIGH_RANGE>
+    <LOW_TRIM>0</LOW_TRIM>
+    <HIGH_TRIM>0</HIGH_TRIM>
+    <TRIP_A_SETPOINT>0</TRIP_A_SETPOINT>
+    <TRIP_A_DEADBAND>0</TRIP_A_DEADBAND>
+    <TRIP_B_SETPOINT>0</TRIP_B_SETPOINT>
+    <TRIP_B_DEADBAND>0</TRIP_B_DEADBAND>
+  </CONFIG>
+</DataSet>

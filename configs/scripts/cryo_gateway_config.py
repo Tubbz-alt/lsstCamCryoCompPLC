@@ -46,18 +46,29 @@ class PlutoGateway():
 
 
 
-plutoGateway = PlutoGateway('192.168.1.132', 502)
+plutoGateway = PlutoGateway('192.168.1.170', 502)
+#plutoGateway = PlutoGateway('192.168.1.172', 502)
+#plutoGateway = PlutoGateway('192.168.1.174', 502)
+#plutoGateway = PlutoGateway('192.168.1.176', 502)
+#plutoGateway = PlutoGateway('192.168.1.178', 502)
+#plutoGateway = PlutoGateway('192.168.1.180', 502)
+#plutoGateway = PlutoGateway('192.168.1.182', 502)
+#plutoGateway = PlutoGateway('192.168.1.184', 502)
+#plutoGateway = PlutoGateway('192.168.1.186', 502)
+#plutoGateway = PlutoGateway('192.168.1.188', 502)
+#plutoGateway = PlutoGateway('192.168.1.190', 502)
+#plutoGateway = PlutoGateway('192.168.1.192', 502)
 
 
 # Reset all registers to 0
 for add in range(0,41+1):
     plutoGateway.gateway_config_write_read(add, 0x00)
 
-# Activate Data to Pluto Area 0
-plutoGateway.gateway_config_write_read(1,0b01)
+# Activate Data to Pluto Area 0,1
+plutoGateway.gateway_config_write_read(1,0b001)
 
-# Data to Pluto Timeout = 1000 ms
-plutoGateway.gateway_config_write_read(2,1000)
+# Data to Pluto Timeout = 0
+plutoGateway.gateway_config_write_read(2,0)
 
 # Additional Data Areas for PLC 0
 plutoGateway.gateway_config_write_read(5,0x01)
@@ -75,15 +86,6 @@ plutoGateway.gateway_config_write_read(16,0x0C)
 plutoGateway.gateway_config_write_read(17,0x0D)
 plutoGateway.gateway_config_write_read(18,0x0E)
 plutoGateway.gateway_config_write_read(19,0x0F)
-plutoGateway.gateway_config_write_read(20,0x10)
-plutoGateway.gateway_config_write_read(21,0x11)
-plutoGateway.gateway_config_write_read(22,0x12)
-plutoGateway.gateway_config_write_read(23,0x13)
-plutoGateway.gateway_config_write_read(24,0x14)
-plutoGateway.gateway_config_write_read(24,0x15)
-
-
-
 
 
 

@@ -1,0 +1,50 @@
+﻿pmver 2.36
+!Lan EN
+
+#Include <func06.fps>
+
+LatchWithDelay(out LatchStatus, out LatchNeedsReset, out Warning, OKcondition, const DelaySeconds, Reset, Block, out filter)
+Instruction_Set_3
+{
+!Result=LatchOK
+!r=delay10                              ;
+!m=teste                                ;
+
+!Lan DelaySeconds:;Must be >=2 s
+
+filter=Upcount(SM_1Hz,OKcondition,DelaySeconds)
+LatchOK=StartT(/filter,reset,1,LatchStatus)
+LatchNeedsReset=/filter*/latchOK
+warning=/okcondition*latchOK
+}
+
+
+DoubleLatchWithDelay(OKcondition1, const delay1, OKCondition2, const delay2, reset, out latchOkStatus, out lacthOkNeedsReset, out warning)
+Instruction_Set_3
+{
+!Result=latchOk
+!m=LatchOK1                             ;
+!m=LatchOKStatus1                       ;
+!m=LatchOKNeedsReset1                   ;
+!m=LatchOK2                             ;
+!m=LatchOKStatus2                       ;
+!m=LatchOKNeedsReset2                   ;
+!m=warning1                             ;
+!m=warning2                             ;
+!m=filter1                              ;
+!m=filter2                              ;
+
+!Lan delay1:;Must be >=2 s
+!Lan delay2:;Must be >=2 s
+
+latchOK1=LatchWithDelay(latchOKstatus1,latchOKNeedsReset1,warning1,okcondition1,delay1,reset,0,filter1)
+;`Condition 1
+latchOK2=LatchWithDelay(latchOKstatus2,latchOKNeedsReset2,warning2,okcondition2,delay2,reset,0,filter2)
+;Condition 2
+warning=warning2+warning1
+latchOk=latchOK1*latchOK2
+latchOkStatus=latchOkStatus1+latchOkStatus2
+lacthOkNeedsReset=(latchOkNeedsReset1+latchOkNeedsReset2)*/filter1*/filter2
+}
+
+
