@@ -46,9 +46,9 @@ class PlutoGateway():
 
 
 
-plutoGateway = PlutoGateway('192.168.1.170', 502)
+#plutoGateway = PlutoGateway('192.168.1.170', 502)
 #plutoGateway = PlutoGateway('192.168.1.172', 502)
-#plutoGateway = PlutoGateway('192.168.1.174', 502)
+plutoGateway = PlutoGateway('192.168.1.174', 502)
 #plutoGateway = PlutoGateway('192.168.1.176', 502)
 #plutoGateway = PlutoGateway('192.168.1.178', 502)
 #plutoGateway = PlutoGateway('192.168.1.180', 502)
